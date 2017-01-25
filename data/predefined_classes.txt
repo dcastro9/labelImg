@@ -1,5 +1,7 @@
-dog
-person
-cat
-tv
-car
+grasper
+hook
+clipper
+bipolar
+irrigator
+scissors
+specimen_bag

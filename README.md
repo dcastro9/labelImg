@@ -6,64 +6,63 @@ LabelImg is a graphical image annotation tool.
 
 It is written in Python and uses Qt for its graphical interface.
 
-Annotations are saved as XML files in PASCAL VOC format, the format used by [ImageNet](http://www.image-net.org/).
+The annotation file will be saved as an XML file. The annotation format is PASCAL VOC format, and the format is the same as [ImageNet](http://www.image-net.org/)
 
-![](demo/demo3.jpg)
+![](demo/demo.png)
 
-[Watch a demo video by author tzutalin](https://youtu.be/p0nR2YsCY_U)
+![](demo/demo2.png)
 
-## Get it
+[![Demo video](https://j.gifs.com/4xy9z2.gif)](https://www.youtube.com/watch?v=p0nR2YsCY_U&feature=youtu.be)
 
-### Download prebuilt binaries
+## Dependencies
+* Linux/Ubuntu/Mac
 
-* Windows
- * [Download LabelImg 1.2.1 for Windows](https://raw.githubusercontent.com/tzutalin/LabelImg/gh-pages/windows/windows_v1.2.1.zip)
- * [Download LabelImg 1.2 for Windows](https://raw.githubusercontent.com/tzutalin/LabelImg/gh-pages/windows/windows_v1.2.zip)
-* Linux
- * [Download LabelImg 1.2.1 for Linux](https://raw.githubusercontent.com/tzutalin/LabelImg/gh-pages/linux/linux_v1.2.1.zip)
- * [Download LabelImg 1.2 for Linux](https://raw.githubusercontent.com/tzutalin/LabelImg/gh-pages/linux/linux_v1.2.zip)
-* OS X
- * Binaries for OS X are not yet available. Help would be appreciated. At present it must be [built from source](#os-x).
-
-### Build from source
-
-Linux/Ubuntu/Mac requires at least [Python 2.6](http://www.python.org/getit/) and has been tested with [PyQt
+Requires at least [Python 2.6](http://www.python.org/getit/) and has been tested with [PyQt
 4.8](http://www.riverbankcomputing.co.uk/software/pyqt/intro).
 
-#### Ubuntu Linux
+In order to build the resource and assets, you need to install pyqt4-dev-tools and lxml:
+```
+$ sudo apt-get install pyqt4-dev-tools
+$ sudo pip install lxml
+$ make all
+$ ./labelImg.py
+```
 
-    sudo apt-get install pyqt4-dev-tools
-    sudo pip install lxml
-    make all
-    ./labelImg.py
+Mac requires "$ brew install libxml2" when installing lxml
 
-#### OS X
+* Windows
 
-    brew install qt qt4
-    brew install libxml2
-    make all
-    ./labelImg.py
-
-#### Windows
-
-Download and setup [Python 2.6 or later](https://www.python.org/downloads/windows/), [PyQt4](https://www.riverbankcomputing.com/software/pyqt/download) and [install lxml](http://lxml.de/installation.html).
+Need to download and setup [Python 2.6](https://www.python.org/downloads/windows/) or later and [PyQt4](https://www.riverbankcomputing.com/software/pyqt/download). Also, you need to install other python dependencies.
 
 Open cmd and go to [labelImg]
 
-    pyrcc4 -o resources.py resources.qrc
-    python labelImg.py
-
+```
+$ pyrcc4 -o resources.py resources.qrc
+$ python labelImg.py
+```
 
 ## Usage
+After cloning the code, you should run `$ make all` to generate the resource file.
 
-### Steps
+You can then start annotating by running `$ ./labelImg.py`. For usage
+instructions you can see [Here](https://youtu.be/p0nR2YsCY_U)
 
-1. Build and launch using the instructions above.
-2. Click 'Change default saved annotation folder' in Menu/File
-3. Click 'Open Dir'
-4. Click 'Create RectBox'
+At the moment annotations are saved as an XML file. The format is PASCAL VOC format, and the format is the same as [ImageNet](http://www.image-net.org/)
 
-The annotation will be saved to the folder you specify.
+You can also see [ImageNet Utils](https://github.com/tzutalin/ImageNet_Utils) to download image, create a label text for machine learning, etc
+
+
+### General steps from scratch
+
+* Build and launch: `$ make all; python labelImg.py`
+
+* Click 'Change default saved annotation folder' in Menu/File
+
+* Click 'Open Dir'
+
+* Click 'Create RectBox'
+
+The annotation will be saved to the folder you specify
 
 ### Create pre-defined classes
 
@@ -71,20 +70,19 @@ You can edit the [data/predefined_classes.txt](https://github.com/tzutalin/label
 
 ### Hotkeys
 
-|          |                                          |
-|----------|------------------------------------------|
-| Ctrl + r | Change the default annotation target dir |
-| Ctrl + s | Save                                     |
-| w        | Create a bounding box                    |
-| d        | Next image                               |
-| a        | Previous image                           |
+* Ctrl + r : Change the defult target dir which saving annotation files
+
+* Ctrl + n : Create a bounding box
+
+* Ctrl + s : Save
+
+* n : Next image
+
+* p : Previous image
 
 ### How to contribute
 Send a pull request
 
 ### License
 [License](LICENSE.md)
-
-### Related
-1. [ImageNet Utils](https://github.com/tzutalin/ImageNet_Utils) to download image, create a label text for machine learning, etc
 
