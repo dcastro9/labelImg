@@ -70,15 +70,15 @@ You can edit the [data/predefined_classes.txt](https://github.com/tzutalin/label
 
 ### Hotkeys
 
-* Ctrl + r : Change the defult target dir which saving annotation files
+* Ctrl + R : Change the defult target dir which saving annotation files
 
-* Ctrl + n : Create a bounding box
+* Ctrl + Z : Create a bounding box
 
 * Ctrl + s : Save
 
-* n : Next image
+* Z : Next image
 
-* p : Previous image
+* X : Previous image
 
 ### How to contribute
 Send a pull request
